@@ -1,9 +1,9 @@
 <?php
 
-class Team{
+class Player{
 
     private $fName = null;
-    private $lname = null;
+    private $lName = null;
     private $position = null;
     private $height = 0; //in inches
     private $weight = 0; //in pounds
@@ -41,12 +41,12 @@ class Team{
 
         //get last name
         if (func_num_args() == 0){
-            return $this->lName;
+            return $this->position;
         }
         // set last name
         else if (func_num_args() == 1) {
             //TODO validate that position isone of the 5 enums
-            $this->lName = filter_var(func_get_arg(0),FILTER_SANITIZE_STRING);
+            $this->position = filter_var(func_get_arg(0),FILTER_SANITIZE_STRING);
         }
         return $this;
     }

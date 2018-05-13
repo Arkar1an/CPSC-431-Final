@@ -1,5 +1,5 @@
 <?php
-require_once ('Adaptation.php')
+require_once ('Adaptation.php');
 class Role
 {
     protected $permissions;

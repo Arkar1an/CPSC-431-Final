@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +8,7 @@
 
 <?php
 
-
+    
 
 ?>
 	<table style = " width: 100%; margin-top: 25%">
@@ -39,9 +38,7 @@
 			</th>
 			<th style = "width: 30%; "></th>
 		</tr>
-
-
 	</table>
-
+        
 </body>
 </html>

@@ -1,16 +1,16 @@
 <?php
 
-class Statistic{
+class Statistic {
 
-	$date = null;
-	$away = null;
-	$home = null;
-    	$player = 0;
-	$min = 0;
-	$sec = 0;
-	$points = 0;
-	$assists = 0;
-	$rebounds = 0;
+	private $date = null;
+	private $away = null;
+	private $home = null;
+    	private $player = 0;
+	private $min = 0;
+	private $sec = 0;
+	private $points = 0;
+	private $assists = 0;
+	private $rebounds = 0;
 
 	// date format for sql is 'YYYY-MM-DD'
 	function date(){
@@ -74,7 +74,7 @@ class Statistic{
     	}
     	// set minutes
     	else if (func_num_args() == 1) {
-    		$this->date = filter_var(func_get_arg(0),FILTER_SANITIZE_NUMBER_INT);
+    		$this->min = filter_var(func_get_arg(0),FILTER_SANITIZE_NUMBER_INT);
     	}	
 
 		return $this;
@@ -124,11 +124,11 @@ class Statistic{
 
 		//get rebounds
 		if (func_num_args() == 0){
-        	return $this->home;
+        	return $this->rebounds;
     	}
     	// set rebounds
     	else if (func_num_args() == 1) {
-    		$this->home = filter_var(func_get_arg(0),FILTER_SANITIZE_NUMBER_INT);
+    		$this->rebounds = filter_var(func_get_arg(0),FILTER_SANITIZE_NUMBER_INT);
     	}
 		return $this;
 	}

@@ -4,7 +4,7 @@ create database if not exists CPSC_431_final;
 drop user if exists 'phpengine'; # only accesses the account and role table
 drop user if exists 'observer'; # sees same as user
 drop user if exists 'user'; # can update
-drop user if exists 'manager'; # can see account stuff
+drop user if exists 'manager'; # can see account stuff, and delete
 
 use CPSC_431_final;
 
@@ -123,7 +123,11 @@ CREATE TABLE Person
 
 #php engine grants
 grant select on CPSC_431_final.Account to 'phpengine' identified by 'differentpassword';
-grant select on CPSC_431_final.Role to 'phpengine';
+grant select on CPSC_431_final.Role to 'phpengine'; # to get users role and permission
+grant insert on CPSC_431_final.Account to 'phpengine'; # to register new account
+grant insert on CPSC_431_final.Person to 'phpengine'; 
+grant update on CPSC_431_final.Person to 'phpengine';
+grant update on CPSC_431_final.Account to 'phpengine';
 
 #observer grants
 grant select on CPSC_431_final.Team to 'observer' identified by 'uniquepassword';
@@ -320,6 +324,7 @@ insert into Role values
 	('manager','login_page.php');
 
 ######## 3 Account inserts ########
+# these are project members accounts, actual unencrypted password is commented to the right
 insert into Account values
 	('redcapricorn','2aa60a8ff7fcd473d321e0146afd9e26df395147','manager'), #password2
 	('shrini','e38ad214943daad1d64c102faec29de4afe9da3d','manager'), #password1
