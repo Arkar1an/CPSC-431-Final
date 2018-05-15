@@ -217,7 +217,7 @@ a:active {
                     $stmt->bind_result($b_injurydate,$b_player,$p_fname,$p_lname);
                     
                     while($stmt->fetch()){
-                        $ben = new Bench($b_injurydate, $b_player);
+                        $ben = $b_injurydate.' '.$b_player;
                         echo'<option value="'.$ben.'">'.$b_injurydate.' '.$p_fname.', '.$p_lname.'</option>';
                     
                     }
@@ -266,7 +266,7 @@ a:active {
                     $stmt->store_result();
                     $stmt->bind_result($g_date,$g_away,$g_home);
                     while($stmt->fetch()){
-                        $game = new Game($g_date, $g_away, $g_home);
+                        $game = $g_date.' '.$g_away.' '.$g_home;
                         echo'<option value="'.$game.'">'.$g_date.' '.$g_home.' vs '.$g_away.'</option>';
                     }
                     $stmt->free_result();
@@ -316,7 +316,7 @@ a:active {
                     $stmt->store_result();
                     $stmt->bind_result($s_date,$s_away,$s_home,$s_player,$p_fname,$p_lname);
                     while($stmt->fetch()){
-                        $stat = new Statistic($s_date, $s_away, $s_home, $s_player);
+                        $stat = $s_date.' '.$s_away.' '.$s_home.' '.$s_player;
                         echo'<option value="'.$stat.'">'.$s_date.' '.$s_away.' vs '.$s_home.' :'.$p_fname.', '.$p_lname.'</option>';
                     }
                     $stmt->free_result();
@@ -399,7 +399,7 @@ a:active {
               <tr>
                 <td style="text-align: right; background:darkgrey;">Person</td>
               <td><select name="per_ID" required>
-                  <option value="" selected disabled hidden>Choose person to delete</option>
+                  <option value="" selected disabled hidden>Choose Person to delete</option>
                   <?php
                   require_once ('connect_to_db.php');
                   require_once ('Statistic.php');

@@ -7,7 +7,7 @@ class Game{
 	private $home = null;
 	private $homepts = 0;
 	private $awaypts = 0;
-
+        
 	// date format for sql is 'YYYY-MM-DD'
 	function date(){
 
@@ -17,7 +17,7 @@ class Game{
     	}
     	// set date
     	else if (func_num_args() == 1) {
-    		$this->date = filter_var(func_get_arg(0),FILTER_SANITIZE_NUMBER_INT);
+    		$this->date = filter_var(func_get_arg(0),FILTER_SANITIZE_STRING);
     	}	
 
 		return $this;

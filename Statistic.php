@@ -5,7 +5,7 @@ class Statistic {
 	private $date = null;
 	private $away = null;
 	private $home = null;
-    	private $player = 0;
+        private $player = 0;
 	private $min = 0;
 	private $sec = 0;
 	private $points = 0;
@@ -21,7 +21,7 @@ class Statistic {
     	}
     	// set date
     	else if (func_num_args() == 1) {
-    		$this->date = filter_var(func_get_arg(0),FILTER_SANITIZE_NUMBER_INT);
+    		$this->date = filter_var(func_get_arg(0),FILTER_SANITIZE_STRING);
     	}	
 
 		return $this;

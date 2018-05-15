@@ -16,7 +16,7 @@ class Bench{
     	}
     	// set date of injury
     	else if (func_num_args() == 1) {
-    		$this->injuryDate = filter_var(func_get_arg(0),FILTER_SANITIZE_NUMBER_INT);
+    		$this->injuryDate = filter_var(func_get_arg(0),FILTER_SANITIZE_STRING);
     	}
 		return $this;
 	}
@@ -56,7 +56,7 @@ class Bench{
     	}
     	// set date of return
     	else if (func_num_args() == 1) {
-    		$this->returnDate = filter_var(func_get_arg(0),FILTER_SANITIZE_NUMBER_INT);
+    		$this->returnDate = filter_var(func_get_arg(0),FILTER_SANITIZE_STRING);
     	}
 		return $this;
 	}
